@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon site{% endblock %}</title>
+
+    <!-- Chargement de Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('bootstrap-5.3.3-dist/css/bootstrap.min.css') }}">
+    <script src="{{ asset('bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js') }}" defer></script>
+
+    <!-- Chargement des styles personnalisés -->
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+
+<!-- Barre de navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Bijouterie</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_products') }}">Catalogue</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenu de la page -->
+<div class="container mt-4">
+    {% block body %}{% endblock %}
+</div>
+
+</body>
+</html>

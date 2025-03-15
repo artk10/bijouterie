@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue de bijoux{% endblock %}
+
+{% block body %}
+    <h1>Catalogue de bijoux</h1>
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{ asset('uploads/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text"><strong>{{ product.price }} €</strong></p>
+                            <a href="#" class="btn btn-primary">Acheter</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p>Aucun produit trouvé.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
