@@ -14,6 +14,7 @@
                 <p><strong>Description :</strong> {{ product.description }}</p>
                 <p><strong>Prix :</strong> {{ product.price }} €</p>
                 <a href="#" class="btn btn-success">Acheter</a>
+                <a href="{{ path('app_cart_add', {'id': product.id}) }}" class="btn btn-success">Ajouter au panier</a>
                 <a href="{{ path('app_products') }}" class="btn btn-secondary">Retour au catalogue</a>
             </div>
         </div>
