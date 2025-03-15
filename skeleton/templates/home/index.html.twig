@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue chez Bijouterie{% endblock %}
+
+{% block body %}
+    <div class="container text-center">
+        <h1 class="my-4">Bienvenue chez Bijouterie</h1>
+        <p>Découvrez nos bijoux élégants et raffinés.</p>
+
+        <h2 class="my-4">Nos catégories</h2>
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ category.name }}</h5>
+                            <a href="{{ path('app_products_by_category', {'id': category.id}) }}" class="btn btn-primary">
+                                Voir les produits
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
