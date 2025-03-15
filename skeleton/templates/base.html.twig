@@ -40,6 +40,12 @@
                 </li>
             </ul>
         </div>
+        <!-- Formulaire de recherche -->
+        <form class="d-flex" action="{{ path('app_search') }}" method="GET">
+            <input class="form-control me-2" type="search" name="q" placeholder="Rechercher..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">🔍</button>
+        </form>
+
         <a href="{{ path('app_cart') }}" class="btn btn-outline-primary">🛒 Panier</a>
     </div>
 </nav>

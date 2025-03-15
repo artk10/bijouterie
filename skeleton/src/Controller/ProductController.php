@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\CategoryRepository;
+use Symfony\Component\HttpFoundation\Request;
 
 class ProductController extends AbstractController
 {
@@ -43,6 +44,30 @@ class ProductController extends AbstractController
         return $this->render('product/index.html.twig', [
             'products' => $products,
             'categories' => $categories,
+        ]);
+    }
+
+    #[Route('/search', name: 'app_search')]
+    public function search(Request $request, ProductRepository $productRepository, CategoryRepository $categoryRepository): Response
+    {
+        // Récupérer la requête de recherche depuis l'URL (?q=nom_du_produit)
+        $query = $request->query->get('q', '');
+
+        // Récupérer toutes les catégories pour le menu
+        $categories = $categoryRepository->findAll();
+
+        // Effectuer une recherche dans la base de données (nom du produit correspondant à la requête)
+        $products = $productRepository->createQueryBuilder('p')
+            ->where('p.name LIKE :query')
+            ->setParameter('query', "%$query%")
+            ->getQuery()
+            ->getResult();
+
+        // Renvoyer les résultats à la vue
+        return $this->render('product/search.html.twig', [
+            'products' => $products,
+            'query' => $query,
+            'categories' => $categories, // Passer les catégories au template
         ]);
     }
 
