@@ -3,24 +3,43 @@
 {% block title %}Bienvenue chez Bijouterie{% endblock %}
 
 {% block body %}
-    <div class="container text-center">
-        <h1 class="my-4">Bienvenue chez Bijouterie</h1>
-        <p>Découvrez nos bijoux élégants et raffinés.</p>
+    <!-- Bannière élégante -->
+    <div class="hero-section" style="background: url('{{ asset("uploads/banner.jpg") }}') no-repeat center center/cover; height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div class="container text-center text-white">
+            <h1 class="display-4 fw-bold">Élégance & Raffinement</h1>
+            <p class="lead">Découvrez nos bijoux d'exception, soigneusement conçus pour sublimer chaque instant.</p>
+            <a href="{{ path('app_products') }}" class="btn-transparent mt-3">Explorer la collection</a>
+        </div>
+    </div>
 
-        <h2 class="my-4">Nos catégories</h2>
-        <div class="row">
+    <!-- Section catégories populaires -->
+    <div class="container mt-5 text-center">
+        <h2 class="fw-bold section-title">Nos catégories</h2>
+        <div class="row mt-4">
             {% for category in categories %}
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ category.name }}</h5>
-                            <a href="{{ path('app_products_by_category', {'id': category.id}) }}" class="btn btn-primary">
-                                Voir les produits
-                            </a>
-                        </div>
+                <div class="col-md-3">
+                    <div class="category-card">
+                        <a href="{{ path('app_products_by_category', {'id': category.id}) }}" class="category-link">
+                            <h5 class="mt-2">{{ category.name }}</h5>
+                        </a>
                     </div>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+
+
+    <!-- Section mise en avant -->
+    <div class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="{{ asset('uploads/promo.jpg') }}" class="img-fluid rounded" alt="Nouvelle collection">
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold">Nouvelle collection</h3>
+                <p>Des bijoux uniques, inspirés par la nature et la modernité.</p>
+                <a href="{{ path('app_products') }}" class="btn btn-decouvrir">Découvrir</a>
+            </div>
         </div>
     </div>
 {% endblock %}
