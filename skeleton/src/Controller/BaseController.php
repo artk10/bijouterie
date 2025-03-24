@@ -11,8 +11,8 @@ class BaseController extends AbstractController
 {
     public function __construct(private CategoryRepository $categoryRepository) {}
 
-    public function getCategories(): array
+    protected function getCategories(CategoryRepository $categoryRepository): array
     {
-        return $this->categoryRepository->findAll();
+        return $categoryRepository->findAll();
     }
 }
