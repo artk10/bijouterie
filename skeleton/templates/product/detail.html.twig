@@ -13,8 +13,10 @@
                 <p><strong>Catégorie :</strong> {{ product.category.name }}</p>
                 <p><strong>Description :</strong> {{ product.description }}</p>
                 <p><strong>Prix :</strong> {{ product.price }} €</p>
-                <a href="{{ path('app_cart_add', {'id': product.id}) }}" class="btn btn-success">Ajouter au panier</a>
-                <a href="javascript:history.back()" class="btn btn-secondary">Retour</a>
+                <div class="d-flex flex-column align-items-start gap-2 mt-4">
+                    <a href="{{ path('app_cart_add', {'id': product.id}) }}" class="btn btn-success">Ajouter au panier</a>
+                    <a href="javascript:history.back()" class="btn btn-outline-secondary">Retour</a>
+                </div>
             </div>
         </div>
     </div>
