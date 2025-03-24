@@ -3,8 +3,23 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Uniformiser la hauteur des cartes produits */
 .card {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 450px; /* Hauteur minimale pour toutes les cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Contrôler les dimensions de l’image */
+.card img {
+    max-height: 250px;
+    object-fit: contain;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
 }
 
 /* Uniformiser le style entre "Tous les produits" et "Nos Bijoux" */

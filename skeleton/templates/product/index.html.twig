@@ -28,8 +28,8 @@
         <!-- Affichage des produits -->
         <div class="row">
             {% for product in products %}
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 mb-4 h-100">
+                    <div class="card h-100">
                         <img src="{{ asset('uploads/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ product.name }}</h5>
