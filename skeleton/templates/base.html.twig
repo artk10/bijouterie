@@ -13,18 +13,25 @@
 <body>
 <div class="page-container d-flex flex-column min-vh-100">
 
-    <!-- Barre de navigation améliorée -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 shadow-sm">
         <div class="container">
+            <!-- Logo -->
             <a class="navbar-brand fw-bold custom-brand" href="{{ path('app_home') }}">Accueil</a>
+
+            <!-- Mobile toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Menu principal -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
+                    <!-- Lien vers tous les produits -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ path('app_products') }}">Tous les produits</a>
                     </li>
+
                     <!-- Menu déroulant Nos Bijoux -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
@@ -43,13 +50,34 @@
                         </ul>
                     </li>
                 </ul>
+
+                <!-- Formulaire de recherche -->
+                <form class="d-flex me-3" action="{{ path('app_search') }}" method="GET">
+                    <input class="form-control me-2" type="search" name="q" placeholder="Rechercher..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">🔍</button>
+                </form>
+
+                <!-- Panier -->
+                <a href="{{ path('app_cart') }}" class="btn btn-outline-light me-2">🛒 Panier</a>
+
+                <!-- Authentification -->
+                {% if app.user %}
+                    <div class="text-white d-flex align-items-center gap-2">
+                        <a href="{{ path('app_logout') }}" class="btn btn-outline-light">Déconnexion</a>
+                    </div>
+                {% else %}
+                    <div class="dropdown">
+                        <a class="btn btn-outline-light d-flex align-items-center" href="#" role="button"
+                           id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            👤
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_register') }}">Inscription</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
-            <!-- Formulaire de recherche -->
-            <form class="d-flex me-3" action="{{ path('app_search') }}" method="GET">
-                <input class="form-control me-2" type="search" name="q" placeholder="Rechercher..." aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">🔍</button>
-            </form>
-            <a href="{{ path('app_cart') }}" class="btn btn-outline-light">🛒 Panier</a>
         </div>
     </nav>
 
