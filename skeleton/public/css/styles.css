@@ -9,14 +9,14 @@ body {
 
 /* Uniformiser le style entre "Tous les produits" et "Nos Bijoux" */
 .navbar-nav .nav-item .nav-link {
-    padding: 10px 15px; /* Uniformiser l'espacement */
-    font-weight: 500; /* Mettre en gras */
-    color: #333; /* Couleur identique */
+    padding: 10px 15px;
+    font-weight: 500;
+    color: #333;
 }
 
 /* Ajout d'un effet de survol */
 .navbar-nav .nav-item .nav-link:hover {
-    color: #007bff; /* Bleu Bootstrap */
+    color: #007bff;
 }
 
 /* Assurer un alignement correct */
@@ -177,9 +177,7 @@ main.flex-fill {
     flex: 1;
 }
 
-
-
-
-
-
-
+.img-fluid {
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
