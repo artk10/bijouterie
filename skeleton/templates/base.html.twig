@@ -11,56 +11,62 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
+<div class="page-container d-flex flex-column min-vh-100">
 
-<!-- 🌟 Barre de navigation améliorée -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-    <div class="container">
-        <a class="navbar-brand fw-bold text-white" href="{{ path('app_home') }}">Accuiel</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ path('app_products') }}">Tous les produits</a>
-                </li>
-                <!-- Menu déroulant Nos Bijoux -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Nos Bijoux
-                    </a>
-                    <ul class="dropdown-menu">
-                        {% for category in categories %}
-                            <li>
-                                <a class="dropdown-item" href="{{ path('app_products_by_category', {'id': category.id}) }}">
-                                    {{ category.name }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            </ul>
+    <!-- Barre de navigation améliorée -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold custom-brand" href="{{ path('app_home') }}">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('app_products') }}">Tous les produits</a>
+                    </li>
+                    <!-- Menu déroulant Nos Bijoux -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Nos Bijoux
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for category in categories %}
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="{{ path('app_products_by_category', {'id': category.id}) }}">
+                                        {{ category.name }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Formulaire de recherche -->
+            <form class="d-flex me-3" action="{{ path('app_search') }}" method="GET">
+                <input class="form-control me-2" type="search" name="q" placeholder="Rechercher..." aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">🔍</button>
+            </form>
+            <a href="{{ path('app_cart') }}" class="btn btn-outline-light">🛒 Panier</a>
         </div>
-        <!-- Formulaire de recherche -->
-        <form class="d-flex me-3" action="{{ path('app_search') }}" method="GET">
-            <input class="form-control me-2" type="search" name="q" placeholder="Rechercher..." aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">🔍</button>
-        </form>
-        <a href="{{ path('app_cart') }}" class="btn btn-outline-light">🛒 Panier</a>
-    </div>
-</nav>
+    </nav>
 
-<!-- 🎯 Contenu de la page -->
-<div class="container mt-5">
-    {% block body %}{% endblock %}
+    <!-- Contenu de la page -->
+    <main class="flex-fill">
+        <div class="container mt-5">
+            {% block body %}{% endblock %}
+        </div>
+    </main>
+
+    <!--  Pied de page amélioré -->
+    <footer class="footer text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">Bijoux.com © {{ "now"|date("Y") }} - Tous droits réservés.</p>
+        </div>
+    </footer>
 </div>
-
-<!-- 📌 Pied de page amélioré -->
-<footer class="footer text-white text-center py-4 mt-5">
-    <div class="container">
-        <p class="mb-0">Bijoux.com © {{ "now"|date("Y") }} - Tous droits réservés.</p>
-    </div>
-</footer>
 
 </body>
 </html>

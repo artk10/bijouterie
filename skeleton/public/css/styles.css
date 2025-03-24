@@ -32,30 +32,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
 }
 
 /* Bouton avec bordure fine et sans fond */
 .btn-transparent {
-    background-color: transparent; /* Toujours transparent */
-    border: 2px solid white; /* Bordure fine blanche */
+    background-color: transparent;
+    border: 2px solid white;
     color: white;
     padding: 5px 15px;
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
-    border-radius: 5px; /* Coins légèrement arrondis */
+    border-radius: 5px;
     text-align: center;
     display: inline-block;
     transition: all 0.3s ease-in-out;
-    text-decoration: none; /* Supprime le soulignement */
+    text-decoration: none;
 }
 
 /* Effet au survol */
 .btn-transparent:hover {
-    background-color: transparent; /* Reste transparent */
-    color: black; /* Texte devient noir */
-    border-color: black; /* Bordure devient noire */
-    text-decoration: none; /* Toujours pas de soulignement */
+    background-color: transparent;
+    color: black;
+    border-color: black;
+    text-decoration: none;
 }
 
 .align-items-center {
@@ -101,35 +102,43 @@ body {
 
 /* Changement de couleur au survol */
 .category-link:hover {
-    color: #d4af37; /* Or raffiné pour un effet premium */
+    color: #d4af37;
 }
 
-/* 🌟 Mise à jour de la barre de navigation */
 .navbar {
-    background-color: #5AC8C8 !important; /* Couleur plus contrastée */
+    background-color: whitesmoke !important;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.btn-outline-light,
+.btn-outline-primary {
+    color: black !important;
+    border-color: black !important;
+}
+
 .navbar .nav-link {
-    color: white !important;
+    color: black !important;
     font-weight: 500;
 }
 
 .navbar .nav-link:hover {
-    color: #004D40 !important; /* Effet survol plus foncé */
+    color: black !important;
 }
 
-/* 📌 Mise à jour du pied de page */
+.custom-brand {
+    color: black !important;
+}
+
 .footer {
-    background-color: #5AC8C8;
-    color: white;
+    background-color: whitesmoke;
+    color: black !important;
     font-size: 14px;
     text-align: center;
     padding: 15px 0;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 
-/* 🖤 Style pour le bouton "Découvrir" */
 .btn-decouvrir {
     background-color: transparent;
     border: 2px solid black; /* Bordure fine noire */
@@ -144,12 +153,30 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-/* 🎯 Effet au survol */
+
 .btn-decouvrir:hover {
     background-color: rgba(0, 0, 0, 0.1); /* Léger effet au survol */
     color: black;
     border-color: black;
 }
+
+.btn-outline-light,
+.btn-outline-primary {
+    color: black !important;
+    border-color: black !important;
+}
+
+/* Permet au footer de rester en bas */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.flex-fill {
+    flex: 1;
+}
+
 
 
 
