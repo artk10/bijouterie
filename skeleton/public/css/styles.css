@@ -253,10 +253,6 @@ main.flex-fill {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.table-responsive {
-
-}
-
 .cart-table th {
     background-color: #e9ecef;
     font-weight: bold;
@@ -270,6 +266,3 @@ main.flex-fill {
 .cart-container .btn {
     min-width: 180px;
 }
-
-
-
