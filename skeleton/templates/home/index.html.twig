@@ -17,7 +17,7 @@
         <h2 class="fw-bold section-title">Nos catégories</h2>
         <div class="row mt-4">
             {% for category in categories %}
-                <div class="col-md-3">
+                <div class="col-md-3 {% if loop.last and loop.length % 4 != 0 %}mt-4{% endif %}">
                     <div class="category-card">
                         <a href="{{ path('app_products_by_category', {'id': category.id}) }}" class="category-link">
                             <h5 class="mt-2">{{ category.name }}</h5>
