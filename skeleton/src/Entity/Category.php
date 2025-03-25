@@ -33,6 +33,11 @@ class Category
         $this->products = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->name; // или другое поле, которое нужно отображать
+    }
+
     public function getId(): ?int
     {
         return $this->id;
