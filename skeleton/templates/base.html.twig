@@ -38,7 +38,7 @@
                            data-bs-toggle="dropdown" aria-expanded="false">
                             Nos Bijoux
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu bijoux-dropdown">
                             {% for category in categories %}
                                 <li>
                                     <a class="dropdown-item"
@@ -63,7 +63,7 @@
                 </form>
 
                 <!-- Panier -->
-                <a href="{{ path('app_cart') }}" class="btn btn-outline-light me-2">🛒 Panier</a>
+                <a href="{{ path('app_cart') }}" class="btn btn-outline-light me-2 btn-panier">🛒 Panier</a>
 
                 <!-- Authentification -->
                 {% if app.user %}
@@ -100,6 +100,22 @@
         </div>
     </footer>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const nosBijouxLink = document.getElementById('navbarDropdown');
 
+        if (window.innerWidth <= 576) {
+            nosBijouxLink.removeAttribute('data-bs-toggle');
+            nosBijouxLink.removeAttribute('aria-expanded');
+            nosBijouxLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.getElementById('categories');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
