@@ -22,6 +22,15 @@ body {
     display: block;
 }
 
+.card-description {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 /* Uniformiser le style entre "Tous les produits" et "Nos Bijoux" */
 .navbar-nav .nav-item .nav-link {
     padding: 10px 15px;

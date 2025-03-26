@@ -17,9 +17,9 @@
                             <img src="{{ asset('uploads/' ~ product.image) }}" class="card-img-top" alt="{{ product.name }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
-                                <p class="card-text">{{ product.description }}</p>
+                                <p class="card-text card-description">{{ product.description }}</p>
                                 <p class="card-text"><strong>{{ product.price }} €</strong></p>
-                                <a href="{{ path('app_product_detail', {'id': product.id}) }}" class="btn btn-primary">Voir le produit</a>
+                                <a href="{{ path('app_product_detail', {'id': product.id}) }}" class="btn btn-info">Voir le produit</a>
                             </div>
                         </div>
                     </div>

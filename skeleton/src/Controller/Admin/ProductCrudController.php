@@ -23,14 +23,16 @@ class ProductCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name'),
-            AssociationField::new('category'),
-            TextField::new('description'),
+            AssociationField::new('category')
+                ->setRequired(true),
+            TextField::new('description')
+                ->setRequired(true),
             NumberField::new('price'),
             ImageField::new('image')
+                ->setRequired(false)
                 ->setBasePath('uploads')
                 ->setUploadDir('public/uploads')
-                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
-                ->setRequired(false),
+                ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]'),
         ];
     }
 }
