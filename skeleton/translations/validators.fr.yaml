@@ -1,0 +1,4 @@
+Symfony:
+  There is already an account with this username: "Ce nom d'utilisateur est déjà utilisé."
+  Your password should be at least {{ limit }} characters: "Votre mot de passe doit contenir au moins {{ limit }} caractères."
+  You should agree to our terms: "Vous devez accepter les conditions d'utilisation."
