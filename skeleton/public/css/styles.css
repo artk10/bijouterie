@@ -285,7 +285,7 @@ main.flex-fill {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     /* Bouton connexion carré */
     .navbar .dropdown .btn-outline-light {
         width: 45px;
@@ -319,5 +319,50 @@ main.flex-fill {
         margin-bottom: 10px;
     }
 
+    .btn-filter {
+        margin-top: 10px;
+    }
+
+    .label-full {
+        display: none !important;
+    }
+
+    .label-short {
+        display: inline !important;
+    }
 }
+
+@media (max-width: 402px) {
+    .cart-buttons {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px;
+    }
+
+    .cart-buttons a {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    /* Égaliser la hauteur de toutes les cartes catégories */
+    .category-card {
+        height: 100px; /* высота, подходящая под самую высокую карточку */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .category-card h5 {
+        font-size: 1rem;
+        margin: 0;
+    }
+}
+
+
+
+
+
 
