@@ -7,6 +7,14 @@ html {
     scroll-behavior: smooth;
 }
 
+.navbar .dropdown-menu-user {
+    min-width: auto;
+    width: 142px;
+    right: 0 !important;
+    transform: translateX(0%) !important;
+    text-align: center;
+}
+
 /* Uniformiser la hauteur des cartes produits */
 .card {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -285,7 +293,7 @@ main.flex-fill {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     /* Bouton connexion carré */
     .navbar .dropdown .btn-outline-light {
         width: 45px;
@@ -306,9 +314,10 @@ main.flex-fill {
     }
 
     .navbar .dropdown-menu {
-        left: 33% !important;
-        transform: translateX(-50%) !important;
-        top: calc(100% + 5px) !important;
+        min-width: auto;
+        width: 110px;
+        left: 0 !important;
+        transform: translateX(0%) !important;
     }
 
     #navbarDropdown::after {
@@ -360,9 +369,3 @@ main.flex-fill {
         margin: 0;
     }
 }
-
-
-
-
-
-

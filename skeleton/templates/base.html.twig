@@ -76,7 +76,7 @@
                            id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             👤
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <ul class="dropdown-menu dropdown-menu-user dropdown-menu-end" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a></li>
                             <li><a class="dropdown-item" href="{{ path('app_register') }}">Inscription</a></li>
                         </ul>
@@ -104,7 +104,7 @@
     document.addEventListener('DOMContentLoaded', function () {
         const nosBijouxLink = document.getElementById('navbarDropdown');
 
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= 991) {
             nosBijouxLink.removeAttribute('data-bs-toggle');
             nosBijouxLink.removeAttribute('aria-expanded');
             nosBijouxLink.addEventListener('click', function (e) {
