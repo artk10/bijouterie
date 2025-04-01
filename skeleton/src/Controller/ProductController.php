@@ -16,7 +16,7 @@ class ProductController extends AbstractController
     {
         // Récupérer les valeurs de prix min et max depuis l'URL (par défaut: 0 - 10000)
         $minPrice = $request->query->get('min_price', 0);
-        $maxPrice = $request->query->get('max_price', 10000);
+        $maxPrice = $request->query->get('max_price', 1000);
 
         // Récupérer toutes les catégories pour l'affichage du menu
         $categories = $categoryRepository->findAll();
