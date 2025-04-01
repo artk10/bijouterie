@@ -84,7 +84,7 @@ class ProductController extends AbstractController
         // Récupérer toutes les catégories pour le menu
         $categories = $categoryRepository->findAll();
 
-        // Effectuer une recherche dans la base de données (nom du produit correspondant à la requête)
+        // Effectuer une recherche dans la base de données (nom du produit correspondant)
         $products = $productRepository->createQueryBuilder('p')
             ->where('p.name LIKE :query')
             ->setParameter('query', "%$query%")
@@ -95,7 +95,7 @@ class ProductController extends AbstractController
         return $this->render('product/search.html.twig', [
             'products' => $products,
             'query' => $query,
-            'categories' => $categories, // Passer les catégories au template
+            'categories' => $categories,
         ]);
     }
 
