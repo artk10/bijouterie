@@ -14,7 +14,7 @@ class ProductController extends AbstractController
     #[Route('/products', name: 'app_products')]
     public function index(Request $request, ProductRepository $productRepository, CategoryRepository $categoryRepository): Response
     {
-        // Récupérer les valeurs de prix min et max depuis l'URL (par défaut: 0 - 10000)
+        // Récupérer les valeurs de prix min et max depuis l'URL (par défaut: 0 - 1000)
         $minPrice = $request->query->get('min_price', 0);
         $maxPrice = $request->query->get('max_price', 1000);
 
