@@ -65,7 +65,7 @@ class ProductController extends AbstractController
 
         // Définir les valeurs minPrice et maxPrice pour éviter l'erreur Twig
         $minPrice = 0;
-        $maxPrice = 10000;
+        $maxPrice = 1000;
 
         return $this->render('product/index.html.twig', [
             'products' => $products,
